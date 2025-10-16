@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+</head>
+<body>
+    <h1>Testing Image Paths</h1>
+    
+    <h2>Design Graphic - Bloom Cafeo</h2>
+    <img src="Design Graphic/Bloom Cafeo/1.png" alt="Test 1" style="max-width: 200px; border: 1px solid red;">
+    <img src="Design Graphic/Bloom Cafeo/2.png" alt="Test 2" style="max-width: 200px; border: 1px solid red;">
+    
+    <h2>Photography - Food</h2>
+    <img src="Photography/FOOD/IMG_9918.jpg" alt="Food 1" style="max-width: 200px; border: 1px solid blue;">
+    <img src="Photography/FOOD/IMG_9926.jpg" alt="Food 2" style="max-width: 200px; border: 1px solid blue;">
+    
+    <h2>Illustration - Ayam Mascot</h2>
+    <img src="Illustration/Ayam Mascot Kurir/Ayam Basic (20250226050017).png" alt="Ayam 1" style="max-width: 200px; border: 1px solid green;">
+    
+    <script>
+        // Test image loading
+        document.querySelectorAll('img').forEach((img, index) => {
+            img.onload = function() {
+                console.log(`Image ${index + 1} loaded successfully:`, this.src);
+            };
+            img.onerror = function() {
+                console.error(`Image ${index + 1} failed to load:`, this.src);
+                this.style.backgroundColor = 'red';
+                this.style.color = 'white';
+                this.innerHTML = 'FAILED: ' + this.alt;
+            };
+        });
+    </script>
+</body>
+</html>

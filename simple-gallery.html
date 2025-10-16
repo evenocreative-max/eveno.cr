@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Gallery Test</title>
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+        .portfolio-item {
+            border: 2px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .portfolio-item:hover {
+            background-color: #f0f0f0;
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .gallery-image {
+            max-width: 100%;
+            max-height: 60vh;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Gallery Test</h1>
+    
+    <div class="portfolio-grid">
+        <div class="portfolio-item" onclick="openSimpleGallery('design-bloom-cafeo')">
+            <img src="Design Graphic/Bloom Cafeo/1.png" alt="Bloom Cafeo">
+            <h3>Bloom Cafeo Design</h3>
+        </div>
+        
+        <div class="portfolio-item" onclick="openSimpleGallery('design-kokomatcha')">
+            <img src="Design Graphic/KokoMatcha/Menu Cover.png" alt="KokoMatcha">
+            <h3>KokoMatcha Design</h3>
+        </div>
+        
+        <div class="portfolio-item" onclick="openSimpleGallery('photography-food')">
+            <img src="Photography/FOOD/IMG_9918.jpg" alt="Food Photography">
+            <h3>Food Photography</h3>
+        </div>
+    </div>
+
+    <!-- Simple Modal -->
+    <div id="simpleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSimpleGallery()">&times;</span>
+            <img id="simpleImage" class="gallery-image" src="" alt="">
+            <h3 id="simpleTitle">Title</h3>
+            <p id="simpleCounter">1 / 1</p>
+            <button onclick="prevImage()">◀ Prev</button>
+            <button onclick="nextImage()">Next ▶</button>
+        </div>
+    </div>
+
+    <script>
+        const simpleGalleries = {
+            'design-bloom-cafeo': {
+                title: 'Bloom Cafeo Design',
+                images: [
+                    'Design Graphic/Bloom Cafeo/1.png',
+                    'Design Graphic/Bloom Cafeo/2.png',
+                    'Design Graphic/Bloom Cafeo/3.png'
+                ]
+            },
+            'design-kokomatcha': {
+                title: 'KokoMatcha Design', 
+                images: [
+                    'Design Graphic/KokoMatcha/Menu Cover.png',
+                    'Design Graphic/KokoMatcha/Menu.png',
+                    'Design Graphic/KokoMatcha/Standing Poster.png'
+                ]
+            },
+            'photography-food': {
+                title: 'Food Photography',
+                images: [
+                    'Photography/FOOD/IMG_9918.jpg',
+                    'Photography/FOOD/IMG_9926.jpg',
+                    'Photography/FOOD/IMG_9931.jpg'
+                ]
+            }
+        };
+        
+        let currentSimpleGallery = null;
+        let currentSimpleIndex = 0;
+        
+        function openSimpleGallery(galleryId) {
+            console.log('Opening simple gallery:', galleryId);
+            
+            const gallery = simpleGalleries[galleryId];
+            if (!gallery) {
+                alert('Gallery not found: ' + galleryId);
+                return;
+            }
+            
+            currentSimpleGallery = gallery;
+            currentSimpleIndex = 0;
+            
+            updateSimpleDisplay();
+            document.getElementById('simpleModal').style.display = 'block';
+        }
+        
+        function closeSimpleGallery() {
+            document.getElementById('simpleModal').style.display = 'none';
+            currentSimpleGallery = null;
+        }
+        
+        function updateSimpleDisplay() {
+            if (!currentSimpleGallery) return;
+            
+            const img = document.getElementById('simpleImage');
+            const title = document.getElementById('simpleTitle');
+            const counter = document.getElementById('simpleCounter');
+            
+            const imagePath = currentSimpleGallery.images[currentSimpleIndex];
+            console.log('Loading image:', imagePath);
+            
+            img.onload = function() {
+                console.log('Image loaded successfully!');
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imagePath);
+                alert('Gagal memuat gambar: ' + imagePath);
+            };
+            
+            img.src = imagePath;
+            title.textContent = currentSimpleGallery.title;
+            counter.textContent = (currentSimpleIndex + 1) + ' / ' + currentSimpleGallery.images.length;
+        }
+        
+        function nextImage() {
+            if (!currentSimpleGallery) return;
+            currentSimpleIndex = (currentSimpleIndex + 1) % currentSimpleGallery.images.length;
+            updateSimpleDisplay();
+        }
+        
+        function prevImage() {
+            if (!currentSimpleGallery) return;
+            currentSimpleIndex = currentSimpleIndex === 0 ? currentSimpleGallery.images.length - 1 : currentSimpleIndex - 1;
+            updateSimpleDisplay();
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('simpleModal').style.display === 'block') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeSimpleGallery();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eveno Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Logo/eveno.jpg" alt="Eveno Logo" class="logo">
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Eveno Creative</h1>
+            <p>Creative Design • Illustration • Photography</p>
+            <a href="#portfolio" class="cta-button">View Portfolio</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Welcome to Eveno Creative! I'm a passionate creative professional specializing in graphic design, illustration, and photography. With years of experience in bringing ideas to life through visual storytelling.</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Portfolio</h2>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+                <button class="filter-btn" data-filter="illustration">Illustration</button>
+                <button class="filter-btn" data-filter="photography">Photography</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Design Items -->
+                <div class="portfolio-item design" onclick="openGallery('design-bloom-cafeo')">
+                    <div class="portfolio-image gallery-trigger">
+                        <img src="Design Graphic/Bloom Cafeo/1.png" alt="Bloom Cafeo Design">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Bloom Cafeo Design</h3>
+                                <p>Complete cafe branding package</p>
+                                <span class="gallery-indicator">📷 Gallery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item design" onclick="openGallery('design-kokomatcha')">
+                    <div class="portfolio-image gallery-trigger">
+                        <img src="Design Graphic/KokoMatcha/Menu Cover.png" alt="KokoMatcha Design">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>KokoMatcha</h3>
+                                <p>Brand identity design</p>
+                                <span class="gallery-indicator">📷 Gallery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item design" onclick="openGallery('design-menu-coffee')">
+                    <div class="portfolio-image gallery-trigger">
+                        <img src="Design Graphic/Menu L Coffee/1.png" alt="Menu L Coffee">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Menu L Coffee</h3>
+                                <p>Coffee menu design</p>
+                                <span class="gallery-indicator">📷 Gallery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photography Items -->
+                <div class="portfolio-item photography" onclick="openGallery('photography-food')">
+                    <div class="portfolio-image gallery-trigger">
+                        <img src="Photography/FOOD/IMG_9918.jpg" alt="Food Photography">
+                        <div class="portfolio-overlay">
+                            <div class="portfolio-info">
+                                <h3>Food Photography</h3>
+                                <p>Professional food photography</p>
+                                <span class="gallery-indicator">📷 Gallery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's work together!</h3>
+                    <p>Have a project in mind? I'd love to hear from you.</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGallery()">&times;</span>
+            <img id="galleryImage" class="gallery-image" src="" alt="">
+            <h3 id="galleryTitle">Title</h3>
+            <p id="galleryCounter">1 / 1</p>
+            <button id="prevBtn" onclick="prevImage()">◀ Prev</button>
+            <button id="nextBtn" onclick="nextImage()">Next ▶</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- Gallery System -->
+    <script>
+        const galleries = {
+            'design-bloom-cafeo': {
+                title: 'Bloom Cafeo Design',
+                images: [
+                    'Design Graphic/Bloom Cafeo/1.png',
+                    'Design Graphic/Bloom Cafeo/2.png',
+                    'Design Graphic/Bloom Cafeo/3.png'
+                ]
+            },
+            'design-kokomatcha': {
+                title: 'KokoMatcha Design', 
+                images: [
+                    'Design Graphic/KokoMatcha/Menu Cover.png',
+                    'Design Graphic/KokoMatcha/Menu.png',
+                    'Design Graphic/KokoMatcha/Standing Poster.png'
+                ]
+            },
+            'design-menu-coffee': {
+                title: 'Coffee Menu Design',
+                images: [
+                    'Design Graphic/Menu L Coffee/1.png',
+                    'Design Graphic/Menu L Coffee/2.png',
+                    'Design Graphic/Menu L Coffee/3.png'
+                ]
+            },
+            'photography-food': {
+                title: 'Food Photography',
+                images: [
+                    'Photography/FOOD/IMG_9918.jpg',
+                    'Photography/FOOD/IMG_9926.jpg',
+                    'Photography/FOOD/IMG_9931.jpg'
+                ]
+            }
+        };
+        
+        let currentGallery = null;
+        let currentIndex = 0;
+        
+        function openGallery(galleryId) {
+            console.log('Opening gallery:', galleryId);
+            
+            const gallery = galleries[galleryId];
+            if (!gallery) {
+                alert('Gallery not found: ' + galleryId);
+                return;
+            }
+            
+            currentGallery = gallery;
+            currentIndex = 0;
+            
+            updateGalleryDisplay();
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+        
+        function closeGallery() {
+            document.getElementById('galleryModal').style.display = 'none';
+            currentGallery = null;
+        }
+        
+        function updateGalleryDisplay() {
+            if (!currentGallery) return;
+            
+            const img = document.getElementById('galleryImage');
+            const title = document.getElementById('galleryTitle');
+            const counter = document.getElementById('galleryCounter');
+            
+            const imagePath = currentGallery.images[currentIndex];
+            console.log('Loading image:', imagePath);
+            
+            img.onload = function() {
+                console.log('Image loaded successfully!');
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load image:', imagePath);
+            };
+            
+            img.src = imagePath;
+            title.textContent = currentGallery.title;
+            counter.textContent = (currentIndex + 1) + ' / ' + currentGallery.images.length;
+        }
+        
+        function nextImage() {
+            if (!currentGallery) return;
+            currentIndex = (currentIndex + 1) % currentGallery.images.length;
+            updateGalleryDisplay();
+        }
+        
+        function prevImage() {
+            if (!currentGallery) return;
+            currentIndex = currentIndex === 0 ? currentGallery.images.length - 1 : currentIndex - 1;
+            updateGalleryDisplay();
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('galleryModal').style.display === 'block') {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeGallery();
+            }
+        });
+    </script>
+</body>
+</html>

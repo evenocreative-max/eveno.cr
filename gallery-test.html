@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Test</title>
+    <style>
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        
+        .gallery-modal.show {
+            display: block;
+        }
+        
+        .gallery-content {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border: none;
+            font-size: 30px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+        
+        .gallery-nav.prev { left: 10px; }
+        .gallery-nav.next { right: 10px; }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .gallery-counter {
+            color: white;
+            margin: 10px 0;
+        }
+        
+        .test-trigger {
+            background: orange;
+            color: white;
+            padding: 20px;
+            margin: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gallery Test</h1>
+    
+    <div class="test-trigger" onclick="testOpenGallery()">Click to Test Gallery</div>
+    
+    <!-- Gallery Modal -->
+    <div id="testGalleryModal" class="gallery-modal">
+        <div class="gallery-content">
+            <span class="close-btn" onclick="testCloseGallery()">&times;</span>
+            <button class="gallery-nav prev" onclick="testPrevImage()">&lt;</button>
+            <button class="gallery-nav next" onclick="testNextImage()">&gt;</button>
+            
+            <img id="testGalleryImage" class="gallery-image" src="" alt="">
+            <div class="gallery-counter">
+                <span id="testCurrentIndex">1</span> / <span id="testTotalImages">1</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const testImages = [
+            'Design Graphic/Bloom Cafeo/1.png',
+            'Design Graphic/Bloom Cafeo/2.png', 
+            'Design Graphic/Bloom Cafeo/3.png'
+        ];
+        
+        let testCurrentIndex = 0;
+        
+        function testOpenGallery() {
+            console.log('Test gallery opening...');
+            const modal = document.getElementById('testGalleryModal');
+            modal.classList.add('show');
+            testShowImage();
+        }
+        
+        function testCloseGallery() {
+            const modal = document.getElementById('testGalleryModal');
+            modal.classList.remove('show');
+        }
+        
+        function testShowImage() {
+            const img = document.getElementById('testGalleryImage');
+            const current = document.getElementById('testCurrentIndex');
+            const total = document.getElementById('testTotalImages');
+            
+            img.src = testImages[testCurrentIndex];
+            current.textContent = testCurrentIndex + 1;
+            total.textContent = testImages.length;
+        }
+        
+        function testNextImage() {
+            testCurrentIndex = (testCurrentIndex + 1) % testImages.length;
+            testShowImage();
+        }
+        
+        function testPrevImage() {
+            testCurrentIndex = testCurrentIndex === 0 ? testImages.length - 1 : testCurrentIndex - 1;
+            testShowImage();
+        }
+    </script>
+</body>
+</html>
