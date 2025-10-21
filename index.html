@@ -38,10 +38,10 @@
     <section id="home" class="hero">
       <div class="hero-container">
         <div class="hero-content">
-          <h1 class="hero-title">
-            <h2>EVENO CREATIVE LAB</h2>
+          <div class="hero-title">
+            <h1 class="main-title">EVENO CREATIVE LAB</h1>
             <span class="gradient-text">Solutions</span>
-          </h1>
+          </div>
           <p class="hero-description">
             Helping small brands look big — with designs that speak, illustrations that vibe, and photos that shine.
           </p>
@@ -131,7 +131,7 @@
             </div>
             <h3>Graphic Design</h3>
             <p>
-              Brand identity, logos, marketing materials, and visual
+              Brand identity, logo, marketing materials, and visual
               communication that makes your brand stand out.
             </p>
             <ul class="service-features">
@@ -188,6 +188,17 @@
               <li>Product Photography</li>
             </ul>
           </div>
+        </div>
+        
+        <!-- Services Note -->
+        <div class="services-note">
+          <div class="note-content">
+            <p class="note-question">Didn't see the service you're looking for?</p>
+            <p class="note-answer">Let's discuss your idea — Eveno's here to bring it to life.</p>
+            <p class="note-bundle">You can also combine our services to fit your project — we offer special prices for creative bundles.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -306,7 +317,7 @@
                 alt="Ayam Mascot Kurir"
               />
               <div class="portfolio-overlay">
-                <h3>Ayam Mascot</h3>
+                <h3>Chicken Mascot</h3>
                 <p>Delivery mascot character design (Gallery)</p>
                 <div class="gallery-indicator">
                   <svg
@@ -388,10 +399,38 @@
             >
               <img
                 src="Illustration/Komik Eveno/Part 1/1.png"
-                alt="Komik Eveno"
+                alt="Komik Eveno 1"
               />
               <div class="portfolio-overlay">
-                <h3>Komik Eveno</h3>
+                <h3>Comic Eveno 1</h3>
+                <p>Comic illustration series (Gallery)</p>
+                <div class="gallery-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                    />
+                  </svg>
+                  <span>Gallery</span>
+                </div>
+              </div>
+            </div>
+          </div>
+             <div class="portfolio-item" data-category="illustration">
+            <div
+              class="portfolio-image gallery-trigger"
+              onclick="openGallery('illustration-komik-eveno')"
+            >
+              <img
+                src="Illustration/Komik Eveno/Part 3/3A.png"
+                alt="Komik Eveno 2"
+              />
+            <div class="portfolio-overlay">
+                <h3>Comic Eveno 2</h3>
                 <p>Comic illustration series (Gallery)</p>
                 <div class="gallery-indicator">
                   <svg
@@ -439,41 +478,36 @@
             </div>
           </div>
 
-          <!-- Individual Illustration Images (No Slideshow) -->
           <div class="portfolio-item" data-category="illustration">
             <div
-              class="portfolio-image"
-              onclick="openModal('Illustration/Cover Pundak Remaja.png', 'Cover Pundak Remaja')"
+              class="portfolio-image gallery-trigger"
+              onclick="openGallery('illustration-cover-pundakremaja')"
             >
               <img
                 src="Illustration/Cover Pundak Remaja.png"
-                alt="Cover Pundak Remaja"
-                style="cursor: pointer"
+                alt="Pundak Remaja"
               />
               <div class="portfolio-overlay">
-                <h3>Cover Pundak Remaja</h3>
-                <p>Book cover illustration</p>
+                <h3>Pundak Remaja</h3>
+                <p>collaboration collection (Gallery)</p>
+                <div class="gallery-indicator">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="20"
+                    height="20"
+                  >
+                    <path
+                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
+                    />
+                  </svg>
+                  <span>Gallery</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="portfolio-item" data-category="illustration">
-            <div
-              class="portfolio-image"
-              onclick="openModal('Illustration/Cover Pundak Remaja_.png', 'Cover Pundak Remaja Alternative')"
-            >
-              <img
-                src="Illustration/Cover Pundak Remaja_.png"
-                alt="Cover Pundak Remaja Alternative"
-                style="cursor: pointer"
-              />
-              <div class="portfolio-overlay">
-                <h3>Cover Pundak Remaja Alt</h3>
-                <p>Alternative book cover design</p>
-              </div>
-            </div>
-          </div>
-
+         
           <div class="portfolio-item" data-category="illustration">
             <div
               class="portfolio-image"
@@ -534,124 +568,7 @@
               </div>
             </div>
           </div>
-
-          <div class="portfolio-item" data-category="photography">
-            <div
-              class="portfolio-image gallery-trigger"
-              onclick="openGallery('photography-portrait')"
-            >
-              <img
-                src="Photography/Personal Photo After Graduate/IMG_1430.jpg"
-                alt="Graduate Portrait"
-              />
-              <div class="portfolio-overlay">
-                <h3>Graduate Portrait</h3>
-                <p>Post-graduation portrait session (Gallery)</p>
-                <div class="gallery-indicator">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="20"
-                    height="20"
-                  >
-                    <path
-                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
-                    />
-                  </svg>
-                  <span>Gallery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="photography">
-            <div
-              class="portfolio-image gallery-trigger"
-              onclick="openGallery('photography-product')"
-            >
-              <img
-                src="Photography/Personal Photo For Birthday/Copy of IMG_1937.jpg"
-                alt="Birthday Photography"
-              />
-              <div class="portfolio-overlay">
-                <h3>Birthday Photography</h3>
-                <p>Special birthday moments (Gallery)</p>
-                <div class="gallery-indicator">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="20"
-                    height="20"
-                  >
-                    <path
-                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
-                    />
-                  </svg>
-                  <span>Gallery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="photography">
-            <div
-              class="portfolio-image gallery-trigger"
-              onclick="openGallery('photography-wedding')"
-            >
-              <img
-                src="Photography/Studio Photo Group/IMG_1179.jpg"
-                alt="Studio Group Photography"
-              />
-              <div class="portfolio-overlay">
-                <h3>Studio Group Photography</h3>
-                <p>Professional group studio sessions (Gallery)</p>
-                <div class="gallery-indicator">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="20"
-                    height="20"
-                  >
-                    <path
-                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
-                    />
-                  </svg>
-                  <span>Gallery</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="portfolio-item" data-category="photography">
-            <div
-              class="portfolio-image gallery-trigger"
-              onclick="openGallery('photography-hewan')"
-            >
-              <img
-                src="Photography/LWDC FH UNILA/FIX (2).jpg"
-                alt="LWDC Event Photography"
-              />
-              <div class="portfolio-overlay">
-                <h3>LWDC Event Photography</h3>
-                <p>Law Faculty event coverage (Gallery)</p>
-                <div class="gallery-indicator">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="20"
-                    height="20"
-                  >
-                    <path
-                      d="M4 4h7V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2h7a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"
-                    />
-                  </svg>
-                  <span>Gallery</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- ===== PRICE LIST SECTION ===== -->
@@ -659,23 +576,153 @@
   <div class="container">
     <div class="section-header">
       <h2>Our Pricelist</h2>
-      <p>View our full creative service rates and packages below.</p>
     </div>
 
-    <div class="pdf-viewer">
-      <iframe 
-        src="Pricelist Eveno.pdf"
-        title="Pricelist Eveno"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <div class="pdf-card">
+      <div class="pdf-details">
+        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Icon" class="pdf-icon">
+        <div class="pdf-text">
+          <h3>Pricelist Eveno</h3>
+          <p>Explore our creative pricelist and find the perfect service for your small business.</p>
+        </div>
+      </div>
 
-    <a href="Pricelist Eveno.pdf" class="btn-download" download>
-      📄 Download Pricelist (PDF)
-    </a>
+      <div class="pdf-buttons">
+        <a href="Pricelist Eveno.pdf" target="_blank" class="btn btn-view">Open Fullscreen</a>
+        <a href="Pricelist Eveno.pdf" download class="btn btn-download">Download PDF</a>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  /* === Base Section === */
+  .pricelist {
+    padding: 80px 20px;
+    background: #faf7ff;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4b0082;
+  }
+
+  .section-header p {
+    color: #555;
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+
+  /* === Pricelist Card === */
+  .pdf-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(75, 0, 130, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .pdf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(75, 0, 130, 0.25);
+  }
+
+  /* === PDF Info === */
+  .pdf-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .pdf-icon {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+  }
+
+  .pdf-text h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #4b0082;
+    margin: 0;
+  }
+
+  .pdf-text p {
+    margin-top: 6px;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* === Buttons === */
+  .pdf-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-view {
+    background: linear-gradient(135deg, #8e2de2, #a45de7);
+    color: #fff;
+  }
+
+  .btn-view:hover {
+    background: linear-gradient(135deg, #7a1edb, #933be3);
+    transform: translateY(-2px);
+  }
+
+  .btn-download {
+    background: #fff;
+    border: 2px solid #8e2de2;
+    color: #8e2de2;
+  }
+
+  .btn-download:hover {
+    background: #f2e8ff;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .pdf-card {
+      padding: 25px;
+    }
+
+    .pdf-details {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .pdf-buttons {
+      justify-content: center;
+    }
+
+    .pdf-icon {
+      width: 56px;
+      height: 56px;
+    }
+  }
+</style>
 
 
 
@@ -813,7 +860,7 @@
         <div class="footer-content">
           <div class="footer-brand">
             <h3>eveno.cr</h3>
-            <p>Creative design solutions that inspire and engage.</p>
+            <p>Creative design solutions that help small businesses grow</p>
           </div>
           <div class="footer-links">
             <div class="footer-column">
@@ -835,9 +882,7 @@
             <div class="footer-column">
               <h4>Follow Us</h4>
               <div class="social-links">
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Behance</a>
-                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://www.instagram.com/eveno.cr?igsh=MTQ3MXpnMXd3czAyeg==" class="social-link">Instagram</a>
               </div>
             </div>
           </div>
@@ -963,14 +1008,19 @@
             ],
           },
           "illustration-komik-eveno": {
-            title: "Komik Eveno",
+            title: "Komik Eveno 1",
             images: [
               "Illustration/Komik Eveno/Part 1/1.png",
               "Illustration/Komik Eveno/Part 2/2A.png",
               "Illustration/Komik Eveno/Part 2/2B.png",
               "Illustration/Komik Eveno/Part 2/2C.png",
-              "Illustration/Komik Eveno/Part 3/3A.png",
-              "Illustration/Komik Eveno/Part 3/3B.png",
+            ],
+          },
+            "illustration-komik-eveno": {
+            title: "Komik Eveno 2",
+            images: [
+              "Illustration/Komik Eveno/Part 3/3A.png", 
+              "Illustration/Komik Eveno/Part 3/3B.png", 
               "Illustration/Komik Eveno/Part 3/3C.png",
             ],
           },
@@ -979,6 +1029,24 @@
             images: [
               "Illustration/Logo KokoMatcha/1000137158.png",
               "Illustration/Logo KokoMatcha/KokoMatcha White (20250727110104).png",
+            ],
+          },
+           "illustration-cover-pundakremaja": {
+            title: "Pundak Remaja",
+            images: [
+              "Illustration/Cover Pundak Remaja.png",
+              "Illustration/Cover Pundak Remaja_.png",
+              "Illustration/pundak remaja week 3.jpg",
+              "Illustration/pundak remaja week 4.jpg",
+              "Illustration/pundak remaja week 5.jpg",
+            ],
+          },
+           "illustration-logo-kokomatcha": {
+            title: "Logo KokoMatcha",
+            images: [
+              "Illustration/Logo KokoMatcha/KokoMatcha White (20250727110104).png",
+              "Illustration/Logo KokoMatcha/koko matcha 3.jpg",
+              "Illustration/Logo KokoMatcha/koko matcha 4.jpg",
             ],
           },
 

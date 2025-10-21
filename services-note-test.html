@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services Note Test - eveno.cr</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 40px 20px;
+      }
+      .test-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .preview-note {
+        background: white;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+      }
+
+      /* Copy exact styles from main CSS */
+      .services-note {
+        margin-top: 48px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .note-content {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.95),
+          rgba(255, 255, 255, 0.85)
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 32px 40px;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        max-width: 600px;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+      }
+
+      .note-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 40px rgba(107, 70, 193, 0.15);
+      }
+
+      .note-question {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 12px;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+      }
+
+      .note-answer {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6b46c1;
+        margin-bottom: 16px;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+      }
+
+      .note-bundle {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+        line-height: 1.6;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .note-content {
+          padding: 24px 28px;
+          max-width: 90%;
+        }
+        .note-question {
+          font-size: 1.1rem;
+        }
+        .note-answer {
+          font-size: 0.95rem;
+        }
+        .note-bundle {
+          font-size: 0.9rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .note-content {
+          padding: 20px 24px;
+          max-width: 95%;
+        }
+        .note-question {
+          font-size: 1rem;
+          margin-bottom: 10px;
+        }
+        .note-answer {
+          font-size: 0.9rem;
+          margin-bottom: 14px;
+        }
+        .note-bundle {
+          font-size: 0.85rem;
+        }
+      }
+
+      .info-box {
+        background: #f0f9ff;
+        border: 1px solid #0284c7;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+
+      .info-box h3 {
+        color: #0284c7;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-container">
+      <div class="info-box">
+        <h3>✅ Services Note Berhasil Ditambahkan!</h3>
+        <p>
+          <strong>Lokasi:</strong> Di bawah ketiga service cards (Graphic
+          Design, Illustration, Photography)
+        </p>
+        <p>
+          <strong>Konten:</strong> Note dengan 3 bagian teks yang berbeda
+          styling
+        </p>
+        <p>
+          <strong>Fitur:</strong> Hover effect, responsive design, dan glass
+          morphism effect
+        </p>
+      </div>
+
+      <div class="preview-note">
+        <h2 style="text-align: center; color: #333; margin-bottom: 30px">
+          Preview Services Note
+        </h2>
+
+        <!-- Services Note -->
+        <div class="services-note">
+          <div class="note-content">
+            <p class="note-question">
+              Didn't see the service you're looking for?
+            </p>
+            <p class="note-answer">
+              Let's discuss your idea — Eveno's here to bring it to life.
+            </p>
+            <p class="note-bundle">
+              You can also combine our services to fit your project — we offer
+              special prices for creative bundles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          background: white;
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <h3>Detail Implementasi:</h3>
+        <ul>
+          <li>
+            <strong>HTML Structure:</strong> Ditambahkan setelah services-grid
+            dengan class "services-note"
+          </li>
+          <li>
+            <strong>Styling:</strong> Glass morphism effect dengan gradient
+            background
+          </li>
+          <li>
+            <strong>Typography:</strong> 3 tingkat hierarchy - question (bold),
+            answer (purple), bundle (normal)
+          </li>
+          <li>
+            <strong>Responsive:</strong> Menyesuaikan padding dan font size
+            untuk tablet dan mobile
+          </li>
+          <li>
+            <strong>Interactive:</strong> Hover effect dengan transform dan
+            shadow
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

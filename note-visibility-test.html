@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Note Test</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", Arial, sans-serif;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        padding: 50px 20px;
+      }
+
+      .test-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .services-note {
+        margin: 60px 0 40px 0;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        clear: both;
+      }
+
+      .note-content {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 2px solid #e2e8f0;
+        border-left: 6px solid #6b46c1;
+        padding: 30px 40px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        margin: 0 auto;
+        transition: all 0.3s ease;
+      }
+
+      .note-question {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 15px;
+        margin-top: 0;
+      }
+
+      .note-answer {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #6b46c1;
+        margin-bottom: 18px;
+      }
+
+      .note-bundle {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0;
+        line-height: 1.6;
+      }
+
+      .note-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12),
+          0 2px 6px rgba(0, 0, 0, 0.15);
+      }
+
+      .status {
+        background: #dcfce7;
+        border: 1px solid #22c55e;
+        color: #15803d;
+        padding: 15px 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-section">
+      <div class="status">
+        ✅ TEST: Services Note - Seharusnya terlihat di bawah ini
+      </div>
+
+      <h2 style="text-align: center; margin-bottom: 40px; color: #333">
+        Our Services
+      </h2>
+
+      <div
+        style="
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin-bottom: 40px;
+        "
+      >
+        <div
+          style="
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+          "
+        >
+          <h3>Graphic Design</h3>
+          <p>Brand identity, logo, marketing materials</p>
+        </div>
+        <div
+          style="
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+          "
+        >
+          <h3>Illustration</h3>
+          <p>Custom illustrations, digital art</p>
+        </div>
+        <div
+          style="
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+          "
+        >
+          <h3>Photography</h3>
+          <p>Product photography</p>
+        </div>
+      </div>
+
+      <!-- Services Note -->
+      <div class="services-note">
+        <div class="note-content">
+          <p class="note-question">
+            Didn't see the service you're looking for?
+          </p>
+          <p class="note-answer">
+            Let's discuss your idea — Eveno's here to bring it to life.
+          </p>
+          <p class="note-bundle">
+            You can also combine our services to fit your project — we offer
+            special prices for creative bundles.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="
+          margin-top: 30px;
+          padding: 20px;
+          background: #f0f9ff;
+          border-radius: 8px;
+          border-left: 4px solid #0284c7;
+        "
+      >
+        <h4 style="margin-top: 0; color: #0284c7">Jika note ini terlihat:</h4>
+        <p style="margin-bottom: 0">
+          ✅ HTML dan CSS sudah benar - periksa cache browser di website utama
+        </p>
+        <p style="margin-bottom: 0">
+          🔄 Coba refresh (Ctrl+F5) pada index.html
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
